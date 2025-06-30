@@ -1,14 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-# 🔹 Klíčová slova pro filtrování článků
-KEYWORDS = ["vojska","vojsko", "armáda", "armádní", "armádních", "vojáci", "vojáků", "vojákům", "AČR", "ministerstvo obrany", "vojenské" , "vojenská", "Vojenští", "voják",]
-
-def contains_keywords(text):
-    """Ověří, zda text obsahuje některé z klíčových slov"""
-    return any(keyword.lower() in text.lower() for keyword in KEYWORDS)
-
-def scrape_mocr():
+def scrape():
     URL = "https://mocr.mo.gov.cz/scripts/detail.php?pgid=481"
     response = requests.get(URL)
     articles = []
@@ -27,11 +20,7 @@ def scrape_mocr():
                     link = f"https://mocr.mo.gov.cz{link}"
                 if True:
                     articles.append({"title": title, "link": link, "source": "mocr.mo.gov.cz"})
-    
+
+    print(f"✅ Scraping mocr.mo.gov.cz dokončen, uloženo: {len(articles)} článků.")
     return articles
 
-# Testovací výpis
-if __name__ == "__main__":
-    news = scrape_mocr()
-    for article in news:
-        print(article)

@@ -1,0 +1,5 @@
+uvicorn api:app --reload --port 8080
+
+https://console.cron-job.org 
+
+https://render.com/

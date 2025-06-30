@@ -1,14 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
+from common.keywords import contains_keywords
 
-# 🔹 Klíčová slova pro filtrování článků
-KEYWORDS = ["vojsko", "armáda", "armádní", "armádních", "vojáci", "vojáků", "vojákům", "AČR", "ministerstvo obrany", "vojenské" , "vojenská", "Vojenští", "voják",]
-
-def contains_keywords(text):
-    """Ověří, zda text obsahuje některé z klíčových slov"""
-    return any(keyword.lower() in text.lower() for keyword in KEYWORDS)
-
-def scrape_irozhlas():
+def scrape():
     URL = "https://www.irozhlas.cz/zpravy-domov"
     response = requests.get(URL)
     articles = []
@@ -24,7 +18,6 @@ def scrape_irozhlas():
                 link = f"https://www.irozhlas.cz{link}"
             if contains_keywords(title):
                 articles.append({"title": title, "link": link, "source": "irozhlas.cz"})
-    
+    print(f"✅ Scraping irozhlas.cz dokončen, uloženo: {len(articles)} článků.")
     return articles
-
 

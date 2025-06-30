@@ -1,14 +1,6 @@
 import sqlite3
 from datetime import datetime
-from seznam_scraper import scrape_seznam
-from idnes_scraper import scrape_idnes
-from irozhlas_sraper import scrape_irozhlas
-from acr_mo_gov import scrape_acr
-from denik_scraper import scrape_denik
-from novinky import scrape_novinky
-from aktualne_sraper import scrape_aktualne
-from mocr_mo_gov import scrape_mocr
- 
+
 # 🔹 Vytvoření databáze (pouze pokud neexistuje)
 def create_db():
     conn = sqlite3.connect("news.db")
@@ -52,28 +44,3 @@ def save_to_db(articles):
         print(row)
 
     conn.close()
-
-# 🔹 Hlavní funkce: Scrapování a ukládání do DB
-def main():
-    create_db()  # ✅ Už se nevytváří nová tabulka, pokud existuje
-
-    all_articles = []
-    all_articles.extend(scrape_irozhlas())
-    # all_articles.extend(scrape_idnes())
-    all_articles.extend(scrape_seznam())
-    all_articles.extend(scrape_acr())
-    all_articles.extend(scrape_denik())
-    all_articles.extend(scrape_novinky())
-    all_articles.extend(scrape_aktualne())
-    all_articles.extend(scrape_mocr())
-    
-    
-
-    save_to_db(all_articles)  # Uloží články do databáze
-
-    print(f"Uloženo {len(all_articles)} článků do databáze.")
-
-if __name__ == "__main__":
-    main()
-
-# Funguje

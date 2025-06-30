@@ -1,0 +1,96 @@
+.git
+  config
+  description
+  HEAD
+  hooks
+    applypatch-msg.sample
+    commit-msg.sample
+    fsmonitor-watchman.sample
+    post-update.sample
+    pre-applypatch.sample
+    pre-commit.sample
+    pre-merge-commit.sample
+    pre-push.sample
+    pre-rebase.sample
+    pre-receive.sample
+    prepare-commit-msg.sample
+    push-to-checkout.sample
+    update.sample
+  index
+  info
+    exclude
+  logs
+    HEAD
+    refs
+      heads
+        master
+      remotes
+        origin
+          HEAD
+  objects
+    info
+    pack
+      pack-fcffb7c6ae64f8ab1c6107fa45fb5528cd4737ff.idx
+      pack-fcffb7c6ae64f8ab1c6107fa45fb5528cd4737ff.pack
+  packed-refs
+  refs
+    heads
+      master
+    remotes
+      origin
+        HEAD
+    tags
+api.py
+common
+  keywords.py
+  __pycache__
+    keywords.cpython-311.pyc
+database.py
+debug
+  novinky_rss_feeds.py
+  novinky_scraper_with_debuging.py
+news.db
+notes.txt
+README.md
+render-build.sh
+render.yaml
+requirements.txt
+scraper.py
+scrapers
+  acr_mo_gov.py
+  aktualne_sraper.py
+  ct24.py
+  denik_scraper.py
+  hospodarske_noviny.py
+  idnes_scraper.py
+  irozhlas_sraper.py
+  mocr_mo_gov.py
+  novinky_scraper.py
+  seznam_scraper.py
+  __pycache__
+    acr_mo_gov.cpython-311.pyc
+    aktualne_sraper.cpython-311.pyc
+    ct24.cpython-311.pyc
+    denik_scraper.cpython-311.pyc
+    hospodarske_noviny.cpython-311.pyc
+    idnes_scraper.cpython-311.pyc
+    irozhlas_sraper.cpython-311.pyc
+    mocr_mo_gov.cpython-311.pyc
+    novinky.cpython-311.pyc
+    novinky_scraper.cpython-311.pyc
+    seznam_scraper.cpython-311.pyc
+tree.py
+tree_structure.txt
+__pycache__
+  acr_mo_gov.cpython-311.pyc
+  aktualne_sraper.cpython-311.pyc
+  api.cpython-311.pyc
+  database.cpython-311.pyc
+  denik_scraper.cpython-311.pyc
+  idnes_scraper.cpython-311.pyc
+  irozhlas_sraper.cpython-311.pyc
+  main.cpython-311.pyc
+  mocr_mo_gov.cpython-311.pyc
+  novinky.cpython-311.pyc
+  scraper.cpython-311.pyc
+  seznam_scraper.cpython-311.pyc
