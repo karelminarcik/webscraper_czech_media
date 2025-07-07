@@ -4,28 +4,11 @@ KEYWORDS = [
     "vojáci", "vojáků", "vojákům", "voják",
     "AČR", "obrana", "ministerstvo obrany", "vojenské", "vojenská", "vojenští",
     "vojenské cvičení", "armadní cvičení",
-
-    "česká armáda", "czech army", "generální štáb", "gš ačr",
+    "česká armáda", "generální štáb", "gš ačr",
     "náčelník generálního štábu", "mo čr", "ministerstvo obrany čr",
     "vojenská policie", "vojenské zpravodajství", "vojenské správy",
-    "vojenský útvar", "vojenská akademie",
-
-    "vojenská technika", "vojenské vozidlo", "vojenské letadlo",
-    "tanky", "dělostřelectvo", "pěchota", "speciální síly",
-    "výsadkáři", "prapor", "pluk", "brigáda",
-    "generál ", "vojenský pilot", "vojenský lékař",
-
-    "bojová vozidla", "stíhačky", "vrtulníky",
-    "pandur", "leopard", "gripen", "bvp", "dana", "t-72",
-    "modernizace armády", "nákup techniky", "akvizice armády",
-
-    "nato", "severoatlantická aliance",
-    "zahraniční operace", "operace v zahraničí", "spojenecké síly", 
-    "mezinárodní cvičení", "obranná spolupráce", "vojenská pomoc",
-
-    "mobilizace", "odvod", "záložníci", "aktivní záloha",
+    "vojenský útvar", "vojenská akademie", "aktivní záloha",
     "vojenská služba", "branná povinnost", "vojenský rozpočet",
-    "obranná strategie", "obranný průmysl", "letectvo",
     "pozemní síly", "chemici", "ženisté", "spojaři", "logistika armády",
     "vojenský výcvik", "vojenské školy", "vojenské stipendium",
     "vojenský lékař"
