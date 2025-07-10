@@ -1,31 +1,30 @@
+import os
 import sqlite3
 from datetime import datetime
 
-# 🔹 Vytvoření databáze (pouze pokud neexistuje)
-def create_db():
-    conn = sqlite3.connect("news.db")
-    cursor = conn.cursor()
+# Získání cesty ke složce, kde je skript uložen
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_PATH = os.path.join(BASE_DIR, "news.db")
 
+def create_db():
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
     cursor.execute("""
-        CREATE TABLE IF NOT EXISTS articles (  -- ✅ IF NOT EXISTS zabrání přepsání tabulky
+        CREATE TABLE IF NOT EXISTS articles (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             title TEXT,
             link TEXT UNIQUE,
             source TEXT,
-            date_added TEXT  -- Ukládáme datum jako text YYYY-MM-DD
+            date_added TEXT
         )
     """)
-
     conn.commit()
     conn.close()
 
-# 🔹 Uložení článků do databáze
 def save_to_db(articles):
-    conn = sqlite3.connect("news.db")
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
-
-    today_date = datetime.now().strftime("%Y-%m-%d")  # Aktuální datum
-
+    today_date = datetime.now().strftime("%Y-%m-%d")
     for article in articles:
         try:
             cursor.execute("""
@@ -33,14 +32,11 @@ def save_to_db(articles):
                 VALUES (?, ?, ?, ?)
             """, (article["title"], article["link"], article["source"], today_date))
         except sqlite3.IntegrityError:
-            continue  # Pokud je článek už v DB, přeskočíme
-
+            continue
     conn.commit()
-
-    # ✅ Kontrola: Vypíšeme 5 nejnovějších článků
     cursor.execute("SELECT * FROM articles ORDER BY id DESC LIMIT 5")
     print("✅ Poslední články v databázi:")
     for row in cursor.fetchall():
         print(row)
-
     conn.close()
+
